@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Define custom colors */
+  --color-primary: #5fb74c; /* Example: a custom primary color */
+  --color-secondary: #02a9f7; /* Example: a custom secondary color */
+  --color-heading: #14176C; /* Another custom color */
+  --color-button-green: #5fb74c; /* Another custom color */
+  --color-theme-bg: #3E4073
+
+  /* You can also override default Tailwind colors */
+  /* --color-red-500: #DC2626; Overriding Tailwind's default red-500 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  .rocket {
+    animation: none !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Extended rocket loop with 3D transforms (GPU-friendly)
+   Starts/ends well outside so reset is invisible */
+@keyframes rocket-loop {
+  /* start far below-left (off the button) */
+  0% {
+    transform: translate3d(-60px, 100px, 0);
+  } /* off-canvas start */
+
+  /* approach */
+  12% {
+    transform: translate3d(-20px, 35px, 0);
+  }
+  18% {
+    transform: translate3d(0, 0, 0);
+  } /* arrive */
+  22% {
+    transform: translate3d(0, 0, 0);
+  } /* hold */
+
+  /* six shakes */
+  28% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  33% {
+    transform: translate3d(2px, 0, 0);
+  }
+  38% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  43% {
+    transform: translate3d(2px, 0, 0);
+  }
+  48% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  53% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  /* re-center */
+  58% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* fly off beyond top-right (fully outside the clipped button) */
+  80% {
+    transform: translate3d(80px, -90px, 0);
+  }
+
+  /* loop back to exact start position — matches 0% for seamless looping */
+  100% {
+    transform: translate3d(60px, -100px, 0);
+  } /* off-canvas start */
+}
+
+.rocket {
+  /* ‘both’ prevents the initial snap by applying the 0% transform immediately */
+  animation: rocket-loop 4s ease-in-out infinite both;
+  will-change: transform;
+  backface-visibility: hidden;
 }
