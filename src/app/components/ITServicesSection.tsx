@@ -36,16 +36,16 @@ export default function ITServicesSection() {
         className="absolute inset-0 bg-cover bg-center opacity-80 pointer-events-none"
         style={{ backgroundImage: "url('/services_bg.jpg')" }}
       />
-      <div className="relative max-w-7xl mx-auto px-4 py-16 md:py-20 lg:py-24">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-12">
+      <div className=" relative max-w-7xl mx-auto px-4 md:px-8 lg:px-4 xl:px-0 py-16 md:py-20 lg:py-24">
+        <h2 className="text-center text-4xl md:text-[2.6rem] md:mb-6 leading-tight font-bold text-heading mb-12">
           Empowering Businesses with Top IT Solution Services
         </h2>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:px-8 xl:grid-cols-4">
+        <div className=" grid gap-8 sm:grid-cols-2 lg:px-8 xl:grid-cols-4">
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
+              className="min-h-[28rem] xl:min-h-[36rem] relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
               {/* Image (keeps overflow hidden just for the image) */}
               <div className="relative w-full h-48 rounded-t-xl overflow-hidden">
@@ -58,22 +58,22 @@ export default function ITServicesSection() {
               </div>
 
               {/* Badge (outside image, overlaps onto white content) */}
-              <div className="absolute left-4 top-40 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md z-20 flex items-center justify-center overflow-hidden">
+              <div className="absolute left-6 top-40 w-16 h-16 rounded-full bg-white shadow-md z-20 flex items-center justify-center overflow-hidden">
                 <Image
                   src={service.badge}
                   alt="badge"
-                  width={56}
-                  height={56}
+                  width={58}
+                  height={58}
                   className="object-contain"
                 />
               </div>
 
               {/* Content */}
               <div className="p-6 pt-12">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-heading mb-3">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="font-medium text-body leading-relaxed">
                   {service.desc}
                 </p>
               </div>

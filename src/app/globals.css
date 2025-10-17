@@ -4,9 +4,10 @@
   /* Define custom colors */
   --color-primary: #5fb74c; /* Example: a custom primary color */
   --color-secondary: #02a9f7; /* Example: a custom secondary color */
-  --color-heading: #14176C; /* Another custom color */
+  --color-heading: #14176c; /* Another custom color */
+  --color-body: ##3e4073; /* Another custom color */
   --color-button-green: #5fb74c; /* Another custom color */
-  --color-theme-bg: #3E4073
+  --color-theme-bg: #3e4073;
 
   /* You can also override default Tailwind colors */
   /* --color-red-500: #DC2626; Overriding Tailwind's default red-500 */
@@ -78,4 +79,179 @@
   animation: rocket-loop 4s ease-in-out infinite both;
   will-change: transform;
   backface-visibility: hidden;
+}
+
+/* @keyframes sway-rotate-slow {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+.sway-rotate-slow {
+  animation: sway-rotate-slow 4s ease-in-out infinite;
+}
+ */
+
+/* --- About section decorative rotation --- */
+:root {
+  --sway-angle-start: -25deg; /* anticlockwise */
+  --sway-angle-end: 5deg; /* returns slightly clockwise */
+  --sway-duration: 12s; /* nice & slow */
+}
+
+/* Smooth pendulum-like rotation */
+@keyframes sway-rotate {
+  0% {
+    transform: rotate(var(--sway-angle-start));
+  }
+  50% {
+    transform: rotate(var(--sway-angle-end));
+  }
+  100% {
+    transform: rotate(var(--sway-angle-start));
+  }
+}
+
+/* Apply this class to the decorative PNG wrapper */
+.deco-rotate-slow {
+  animation: sway-rotate var(--sway-duration) ease-in-out infinite;
+  transform-origin: 50% 50%;
+  display: inline-block;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .deco-rotate-slow {
+    animation: none;
+  }
+}
+
+/* ====== Testimonial section animations ====== */
+:root {
+  --float-y-distance: 14px;
+  --float-y-duration: 6s;
+  --slide-x-distance: 22px;
+  --slide-x-duration: 8s;
+}
+
+/* Up/down float */
+@keyframes float-y {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-1 * var(--float-y-distance)));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.float-y-slow {
+  animation: float-y var(--float-y-duration) ease-in-out infinite;
+}
+
+/* Left/right slide */
+@keyframes slide-x {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(var(--slide-x-distance));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.slide-x-slow {
+  animation: slide-x var(--slide-x-duration) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-y-slow,
+  .slide-x-slow {
+    animation: none !important;
+  }
+}
+
+/* Optional tiny fade for testimonial text swap */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 0.35s ease;
+}
+
+/* ---- Brand text utilities ---- */
+.text-heading {
+  color: #0a1f7a;
+} /* deep blue */
+.text-body {
+  color: #2a3463;
+} /* body blue */
+.primary {
+  color: #41b64a;
+} /* green */
+.bg-primary {
+  background-color: #41b64a;
+}
+
+/* Small green underline bar used under section titles */
+.underline-primary {
+  display: block;
+  height: 4px;
+  width: 38px;
+  border-radius: 999px;
+  background-color: #41b64a;
+}
+
+/* ---- "Ball" behavior (scroll-direction aware) ---- */
+.footer-ball {
+  transition: transform 800ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 600ms ease;
+  transform: translate(0, 0) rotate(0deg);
+  will-change: transform;
+}
+.footer-ball.to-corner {
+  /* move up-right & rotate ~45deg */
+  transform: translate(16px, -16px) rotate(45deg);
+}
+
+.footer-link {
+  @apply text-body cursor-pointer hover:text-primary transition-colors;
+}
+
+/* A perfect circular orbit (keeps the radius during animation) */
+@keyframes circle-orbit {
+  0% {
+    transform: rotate(0deg) translateX(var(--r)) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(var(--r)) rotate(-360deg);
+  }
+}
+
+.cross-orbit {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+}
+
+.cross-orbit > svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: circle-orbit var(--dur, 8s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform;
+}
+
+/* (Optional) reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .cross-orbit > svg {
+    animation: none !important;
+  }
 }
