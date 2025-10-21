@@ -16,7 +16,7 @@ export default function BreadcrumbHero({
 }) {
   return (
     <section
-      className="relative w-full"
+      className="relative isolate w-full overflow-hidden z-0"
       style={{ backgroundImage: "url('/SE.png')" }}
     >
       <div className="mx-auto px-4 sm:px-8 xl:px-24 max-w-screen-2xl 2xl:px-36 pt-6 pb-6">

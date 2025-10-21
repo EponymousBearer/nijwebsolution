@@ -54,7 +54,7 @@ const IconArrowDown = (props: React.SVGProps<SVGSVGElement>) => (
 // ---- Data model ----
 const NAV = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   {
     label: "Services",
     href: "/services",
@@ -66,7 +66,7 @@ const NAV = [
     ],
   },
   { label: "Our Work", href: "/work" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 function classNames(...xs: Array<string | false | null | undefined>) {
@@ -140,7 +140,8 @@ export default function Header() {
   return (
     <header
       className={classNames(
-        "top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90",
+        // positioned + high z + isolate
+        "sticky top-0 z-[10000] isolate w-full backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90",
         scrolled ? "shadow-sm ring-1 ring-black/5" : ""
       )}
       role="banner"
@@ -200,7 +201,7 @@ export default function Header() {
                     id={servicesId}
                     role="menu"
                     className={classNames(
-                      "absolute left-0 mt-3 w-56 overflow-hidden rounded-xl border border-slate-200/70 bg-white shadow-xl ring-1 ring-black/5",
+                      "absolute left-0 mt-3 w-56 overflow-hidden rounded-xl border border-slate-200/70 bg-white shadow-xl ring-1 ring-black/5 z-[9999]",
                       servicesOpen
                         ? "opacity-100 translate-y-0"
                         : "pointer-events-none opacity-0 -translate-y-1",
@@ -278,7 +279,9 @@ export default function Header() {
           ref={overlayRef}
           className={classNames(
             "fixed inset-0 z-[60] lg:hidden",
-            drawerOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0 hidden"
+            drawerOpen
+              ? "pointer-events-auto opacity-100"
+              : "pointer-events-none opacity-0 hidden"
           )}
           aria-hidden={!drawerOpen}
         >
@@ -332,7 +335,9 @@ export default function Header() {
                           href={item.href}
                           className={classNames(
                             "flex items-center justify-between px-6 py-3 text-[16px] font-semibold",
-                            isActive(item.href) ? "text-primary" : "text-heading"
+                            isActive(item.href)
+                              ? "text-primary"
+                              : "text-heading"
                           )}
                           onClick={() => setDrawerOpen(false)}
                         >

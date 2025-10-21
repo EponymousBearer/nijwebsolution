@@ -88,10 +88,13 @@ const HeroSlider: FC = () => {
             />
 
             {/* Extra gradient tint to match shade */}
-            <div className="absolute inset-0 bg-black/80" aria-hidden="true" />
+            <div
+              className="absolute inset-0 bg-black/80 z-0 pointer-events-none"
+              aria-hidden="true"
+            />
 
             {/* PNG overlay (wavy/texture) — put your file in /public */}
-            <div className="absolute bottom-0 left-0 w-full h-1/2 pointer-events-none">
+            <div className="absolute bottom-0 left-0 w-full h-1/2 -z-10 pointer-events-none">
               <Image
                 src="/h9_banner_img.png"
                 alt="overlay"
