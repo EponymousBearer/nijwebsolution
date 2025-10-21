@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaPhone, FaPhoneAlt } from "react-icons/fa";
+import { FaFacebookF} from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FiMapPin, FiPhoneCall } from "react-icons/fi";

@@ -26,9 +26,8 @@ const items: Item[] = [
 
 export default function CoreValuesSection() {
   return (
-    // ⬅️ Hide horizontal overflow so orbiting crosses don't create a bottom scrollbar
+    // Hide horizontal overflow so orbiting crosses dont create a bottom scrollbar
     <section className="relative w-full bg-white overflow-hidden isolate">
-
       {/* === BACKGROUND GLOWS === */}
       {/* LEFT PURPLE GLOW */}
       <div
@@ -76,6 +75,10 @@ export default function CoreValuesSection() {
   );
 }
 
+type CSSVarProps = React.CSSProperties & {
+  [key: `--${string}`]: string | number;
+};
+
 function Card({
   title,
   desc,
@@ -99,13 +102,13 @@ function Card({
       </h3>
       <p className="mt-3 text-center leading-7 text-lg text-body">{desc}</p>
 
-      {/* orbit + circle can remain as-is */}
+      {/* ✅ Orbit + circle with proper types */}
       <div className="hidden md:block pointer-events-none absolute top-20 -right-10 -translate-y-1/2 z-50">
         <div
           className="cross-orbit"
           style={{ left: 0, top: 0 } as React.CSSProperties}
         >
-          <Cross style={{ ["--r" as any]: "35px", ["--dur" as any]: "8s" }} />
+          <Cross style={{ "--r": "35px", "--dur": "8s" } as CSSVarProps} />
         </div>
       </div>
       <div className="hidden md:block pointer-events-none absolute -top-1 right-1 -translate-y-1/2 z-50">
@@ -117,7 +120,8 @@ function Card({
   );
 }
 
-function Cross({ style }: { style?: React.CSSProperties }) {
+// ✅ Update the component props to use the helper type
+function Cross({ style }: { style?: CSSVarProps }) {
   return (
     <svg
       width="10"
@@ -135,7 +139,7 @@ function Cross({ style }: { style?: React.CSSProperties }) {
   );
 }
 
-function Circle({ style }: { style?: React.CSSProperties }) {
+function Circle({ style }: { style?: CSSVarProps }) {
   return (
     <svg
       width="8"

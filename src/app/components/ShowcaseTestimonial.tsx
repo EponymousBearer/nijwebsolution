@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaQuoteRight, FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 

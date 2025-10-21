@@ -1,7 +1,7 @@
 // components/BreadcrumbHero.tsx
 import Link from "next/link";
 import Image from "next/image";
-import { FaGreaterThan, FaLessThan } from "react-icons/fa";
+import { FaGreaterThan } from "react-icons/fa";
 
 type Crumb = { label: string; href?: string };
 

@@ -1,7 +1,6 @@
 // components/WhatWeDoSection.tsx
 import Image from "next/image";
-import { JSX } from "react";
-import { FiArrowRight, FiCheck } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 type Props = {
   title?: string;
@@ -72,44 +71,5 @@ export default function WhatWeDoSection({
         </div>
       </div>
     </section>
-  );
-}
-
-/** Small dotted SVG pattern */
-function Dots({
-  width = 160,
-  height = 40,
-}: {
-  width?: number;
-  height?: number;
-}) {
-  const cols = 16;
-  const rows = 4;
-  const gap = width / cols;
-  const r = 2;
-  const dots: JSX.Element[] = [];
-  for (let y = 0; y < rows; y++) {
-    for (let x = 0; x < cols; x++) {
-      dots.push(
-        <circle
-          key={`${x}-${y}`}
-          cx={x * gap + r}
-          cy={y * (gap / 1.6) + r}
-          r={r}
-        />
-      );
-    }
-  }
-  return (
-    <svg
-      width={width}
-      height={height}
-      viewBox={`0 0 ${width} ${height}`}
-      className="text-[#9AA4C5]"
-      fill="currentColor"
-      aria-hidden
-    >
-      {dots}
-    </svg>
   );
 }

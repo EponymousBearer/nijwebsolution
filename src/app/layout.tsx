@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Script from "next/script"; // ✅ Import Next.js Script
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,15 +27,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script
-          src="https://kit.fontawesome.com/4b89063551.js"
-          crossOrigin="anonymous"
-        ></script>
-      </head>
       <body
         className={`min-h-screen bg-white text-slate-900 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* ✅ Use Next.js Script for Font Awesome */}
+        <Script
+          src="https://kit.fontawesome.com/4b89063551.js"
+          crossOrigin="anonymous"
+          strategy="afterInteractive" // loads after hydration
+        />
+
         <Header />
         {children}
         <Footer />

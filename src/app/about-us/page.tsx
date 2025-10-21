@@ -4,6 +4,7 @@ import AboutCompanyBlock from "@/app/components/AboutCompanyBlock";
 import WhatWeDoSection from "../components/WhatWeDoSection";
 import VisionMissionGoals from "../components/VisionMissionGoals";
 import CoreValuesSection from "../components/CoreValuesSection";
+import FourTagsSection from "../components/FourTagsSection";
 
 export default function AboutPage() {
   return (
@@ -29,6 +30,8 @@ export default function AboutPage() {
       <VisionMissionGoals />
 
       <CoreValuesSection />
+
+      <FourTagsSection />
     </main>
   );
 }

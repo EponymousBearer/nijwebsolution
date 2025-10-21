@@ -17,7 +17,7 @@ export default function RequestCallBackSection() {
             Request A Call Back
           </h3>
           <p className="text-gray-700 mt-3 leading-relaxed text-lg  mx-auto md:mx-0">
-            Partner with our experts to turn your ideas into success. Let's get
+            Partner with our experts to turn your ideas into success. Let&apos;s get
             started today!
           </p>
         </div>
