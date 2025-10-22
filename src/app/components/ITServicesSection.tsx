@@ -1,4 +1,3 @@
-// components/ITServicesSection.tsx
 import Image from "next/image";
 
 const services = [
@@ -10,13 +9,13 @@ const services = [
   },
   {
     title: "Mobile App Development",
-    desc: "Transform your ideas into powerful, user-friendly mobile applications. Whether it&apos;s iOS, Android, or cross-platform, we create apps that drive engagement and deliver seamless experiences.",
+    desc: "Transform your ideas into powerful, user-friendly mobile applications. Whether it's iOS, Android, or cross-platform, we create apps that drive engagement and deliver seamless experiences.",
     img: "/services_img03.png",
     badge: "/app-development.svg",
   },
   {
     title: "UI/UX Designing",
-    desc: "Great design is more than just aesthetics—it&apos;s about creating meaningful user experiences. Our UI/UX experts craft intuitive designs that captivate and convert your audience.",
+    desc: "Great design is more than just aesthetics—it's about creating meaningful user experiences. Our UI/UX experts craft intuitive designs that captivate and convert your audience.",
     img: "/services_img01.jpg",
     badge: "/verified_designrush.webp",
   },

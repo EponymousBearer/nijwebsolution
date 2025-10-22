@@ -2,18 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import {
-  BiTrophy,
-  BiBarChartSquare, // or BiLineChart
-  BiHappy,
-  BiUserCircle,
-} from "react-icons/bi"; // ← react-icons
 
 type Stat = {
   value: string;
   labelTop: string;
   labelBottom?: string;
-  // use React nodes for icons now
   iconFront: React.ReactNode;
   iconBack?: React.ReactNode;
 };
@@ -23,31 +16,57 @@ const STATS: Stat[] = [
     value: "7+",
     labelTop: "Years of",
     labelBottom: "Experience",
-    iconFront: <BiTrophy size={44} className="text-green-600" />,
-    iconBack: <BiTrophy size={44} className="text-green-600 opacity-90" />,
+    iconFront: (
+      <Image alt="trophy-icon" src={"/trophy.png"} height={70} width={70} />
+    ),
+    iconBack: (
+      <Image
+        alt="trophy-icon"
+        src={"/trophy.png"}
+        height={70}
+        width={70}
+        className="opacity-90"
+      />
+    ),
   },
   {
     value: "100+",
     labelTop: "Projects",
     labelBottom: "Done",
-    iconFront: <BiBarChartSquare size={44} className="text-green-600" />,
+    iconFront: (
+      <Image alt="trophy-icon" src={"/profit.png"} height={70} width={70} />
+    ),
     iconBack: (
-      <BiBarChartSquare size={44} className="text-green-600 opacity-90" />
+      <Image
+        alt="trophy-icon"
+        src={"/profit-back.png"}
+        height={70}
+        width={70}
+        className="opacity-90"
+      />
     ),
   },
   {
     value: "50+",
     labelTop: "Happy",
     labelBottom: "Clients",
-    iconFront: <BiHappy size={44} className="text-green-600" />,
-    iconBack: <BiHappy size={44} className="text-green-600 opacity-90" />,
+    iconFront: (
+      <Image alt="trophy-icon" src={"/happy.png"} height={70} width={70} />
+    ),
+    iconBack: (
+      <Image alt="trophy-icon" src={"/happy.png"} height={70} width={70} />
+    ),
   },
   {
     value: "15+",
     labelTop: "Development",
     labelBottom: "Staff",
-    iconFront: <BiUserCircle size={44} className="text-green-600" />,
-    iconBack: <BiUserCircle size={44} className="text-green-600 opacity-90" />,
+    iconFront: (
+      <Image alt="trophy-icon" src={"/user.png"} height={70} width={70} />
+    ),
+    iconBack: (
+      <Image alt="trophy-icon" src={"/user.png"} height={70} width={70} />
+    ),
   },
 ];
 
@@ -67,7 +86,7 @@ export default function StatsRibbon() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-white">
+    <section className="relative w-full overflow-hidden">
       {/* LEFT wave */}
       <div className="pointer-events-none absolute left-0 top-0 md:bottom-0 z-0">
         <Image
@@ -75,7 +94,7 @@ export default function StatsRibbon() {
           alt=""
           width={900}
           height={400}
-          className="h-auto opacity-90 w-[110vw] sm:w-[80vw] md:w-[65vw] xl:w-[48vw] 2xl:w-[42vw]"
+          className="h-auto opacity-90 w-[110vw] md:w-[50vw] lg:w-[40vw] xl:w-[30vw] 2xl:w-[20vw]"
           priority
         />
       </div>
@@ -87,7 +106,7 @@ export default function StatsRibbon() {
           alt=""
           width={900}
           height={400}
-          className="h-auto opacity-90 w-[110vw] sm:w-[85vw] md:w-[70vw] xl:w-[50vw] 2xl:w-[44vw]"
+          className="h-auto opacity-90 w-[90vw] md:w-[40vw] lg:w-[30vw] xl:w-[20vw]"
           priority
         />
       </div>
@@ -103,13 +122,13 @@ export default function StatsRibbon() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+      <div className="relative z-10 mx-auto px-4 sm:px-8 xl:px-24 max-w-screen-2xl 2xl:px-36 pt-14 pb-20">
         <div
           className="
             grid items-start
             grid-cols-1 gap-y-8
-            md:grid-cols-2 md:gap-x-10 md:gap-y-14
-            xl:grid-cols-4 xl:gap-x-16 xl:gap-y-10
+            md:grid-cols-2 md:gap-x-10
+            xl:grid-cols-4
           "
         >
           {STATS.map((s, i) => (
@@ -123,13 +142,12 @@ export default function StatsRibbon() {
 
 function StatItem({ value, labelTop, labelBottom, iconFront, iconBack }: Stat) {
   return (
-    <div className="group flex items-center md:items-start gap-4 sm:gap-5">
+    <div className="group flex items-center gap-4">
       {/* Icon with 3D flip on hover */}
       <div
         className="
-          relative shrink-0 grid place-items-center rounded-full bg-white
-          ring-1 ring-[#45B649]/30
-          h-14 w-14 sm:h-16 sm:w-16 xl:h-18 xl:w-18
+          relative shrink-0 grid place-items-center
+          h-20 w-20
           [transform-style:preserve-3d] transition-transform duration-500
           group-hover:[transform:rotateY(180deg)]
         "
@@ -146,11 +164,11 @@ function StatItem({ value, labelTop, labelBottom, iconFront, iconBack }: Stat) {
       </div>
 
       {/* Numbers + labels */}
-      <div className="flex items-baseline gap-3">
-        <span className="leading-none font-extrabold text-[#0A1F7A] text-3xl sm:text-4xl lg:text-5xl">
+      <div className="flex flex-col items-baseline gap-2">
+        <span className="leading-none font-extrabold text-heading text-4xl">
           {value}
         </span>
-        <div className="text-[#2A3463] text-sm sm:text-base lg:text-lg leading-snug">
+        <div className="text-body text-xl font-medium leading-snug">
           <div>{labelTop}</div>
           {labelBottom && <div>{labelBottom}</div>}
         </div>

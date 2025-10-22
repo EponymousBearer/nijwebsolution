@@ -22,8 +22,8 @@ const slides: Slide[] = [
         </span>
       </>
     ),
-    sub: "From Web development To Marketing, UI/UX Design, And More — we deliver excellence that drives results. Let&apos;s build your success story together!",
-    cta: "LET&apos;S DISCUSS YOUR PROJECT →",
+    sub: "From Web development To Marketing, UI/UX Design, And More — we deliver excellence that drives results. Let's build your success story together!",
+    cta: "LET'S DISCUSS YOUR PROJECT →",
   },
   {
     img: "/h9_banner_bg_2.png",
@@ -35,8 +35,8 @@ const slides: Slide[] = [
         </span>
       </>
     ),
-    sub: "Whether It&apos;s Software Development, ECommerce, SEO, Or Mobile Apps, We Create Solutions That Elevate Your Business. Start Your Journey With Us Today!",
-    cta: "LET&apos;S DISCUSS YOUR PROJECT →",
+    sub: "Whether It's Software Development, ECommerce, SEO, Or Mobile Apps, We Create Solutions That Elevate Your Business. Start Your Journey With Us Today!",
+    cta: "LET'S DISCUSS YOUR PROJECT →",
   },
   {
     img: "/h9_banner_bg_3.png",
@@ -60,9 +60,6 @@ const HeroSlider: FC = () => {
 
   return (
     <section
-      // className="min-h-[80vh] isolate md:min-h-[80vh] lg:min-h-[70vh] xl:min-h-[60] relative w-full overflow-hidden"
-      // aria-roledescription="carousel"
-      // FIXED pixel height on each breakpoint (no svh/lvh/dvh)
       className="
         relative w-full overflow-hidden
         h-[630px] md:h-[650px] lg:h-[540px] 2xl:h-[600px]

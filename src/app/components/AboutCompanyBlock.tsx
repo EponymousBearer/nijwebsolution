@@ -1,6 +1,4 @@
-// components/AboutCompanyBlock.tsx
 import Image from "next/image";
-import { BiTrophy } from "react-icons/bi";
 
 export default function AboutCompanyBlock({
   imageSrc = "/inner_about01.png",
@@ -44,7 +42,7 @@ export default function AboutCompanyBlock({
               {/* left */}
               <div className="flex items-end gap-x-4 mb-4">
                 <div className="h-20 w-20 rounded-xl bg-[#F7EFDD] flex items-center justify-center shadow-sm">
-                  <BiTrophy size={36} />
+                  <Image alt="trophy-icon" src={"/trophy.png"} height={40} width={40} />
                 </div>
 
                 <div className="flex-col gap-2 flex">

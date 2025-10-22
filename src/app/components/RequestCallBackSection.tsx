@@ -1,4 +1,3 @@
-// components/RequestCallBackSection.tsx
 import React from "react";
 import Image from "next/image";
 
@@ -17,8 +16,8 @@ export default function RequestCallBackSection() {
             Request A Call Back
           </h3>
           <p className="text-gray-700 mt-3 leading-relaxed text-lg  mx-auto md:mx-0">
-            Partner with our experts to turn your ideas into success. Let&apos;s get
-            started today!
+            Partner with our experts to turn your ideas into success. Let&apos;s
+            get started today!
           </p>
         </div>
 
@@ -29,7 +28,7 @@ export default function RequestCallBackSection() {
               <input
                 type="email"
                 placeholder="Enter Your Email"
-                className="flex-grow px-4 py-3 w-24 text-gray-700  focus:outline-none"
+                className="flex-grow px-4 py-3 w-24 font-bold text-black focus:outline-none"
               />
               <button
                 type="submit"

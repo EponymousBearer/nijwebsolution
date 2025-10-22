@@ -1,13 +1,12 @@
-// components/ServiceStackImageSection.tsx
 import Image from "next/image";
 
 type Props = {
-  src?: string; // path to the single stacks banner image
+  src?: string; 
   alt?: string;
 };
 
 export default function ServiceStackImageSection({
-  src = "/logC.png", // <-- put your one image here (from /public)
+  src = "/logC.png",
   alt = "Our Technology Stack",
 }: Props) {
   return (

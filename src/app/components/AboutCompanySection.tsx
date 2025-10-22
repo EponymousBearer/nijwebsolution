@@ -70,7 +70,7 @@ export default function AboutCompanySection() {
             {/* Main image */}
             <div className="relative z-10 aspect-[4/3] lg:aspect-square xl:aspect-[3/3] w-full overflow-hidden rounded-2xl shadow-md bg-gray-200">
               <Image
-                src="/inner04_about_img.png" // <- replace with your photo
+                src="/inner04_about_img.png"
                 alt="Our office"
                 fill
                 className="object-cover"
@@ -86,7 +86,7 @@ export default function AboutCompanySection() {
             >
               <div className="relative h-24 w-32 lg:h-12 lg:w-20 pointer-events-none">
                 <Image
-                  src="/h5_about_shape.png" // <- small decorative PNG
+                  src="/h5_about_shape.png"
                   alt=""
                   fill
                   className="object-contain"

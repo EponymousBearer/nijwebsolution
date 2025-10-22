@@ -11,20 +11,20 @@ const items: Item[] = [
   {
     title: "Our Vision",
     desc: "Our vision is to empower businesses with innovative and reliable IT solutions that drive growth and create lasting impact.",
-    iconFront: "/icons/vision.svg",
-    iconBack: "/icons/vision.svg",
+    iconFront: "/life-insurance.png",
+    iconBack: "/life-insurance-back.png",
   },
   {
     title: "Our Mission",
     desc: "Our mission is to deliver exceptional technology services by combining creativity, expertise, and customer-centric approaches, ensuring every client achieves their digital transformation goals.",
-    iconFront: "/icons/mission.svg",
-    iconBack: "/icons/mission.svg",
+    iconFront: "/insurance-agent.png",
+    iconBack: "/insurance-agent.png",
   },
   {
     title: "Our Goal",
     desc: "Our goal is to be the preferred global partner for IT services by consistently exceeding client expectations through quality, innovation, and trust.",
-    iconFront: "/icons/goal.svg",
-    iconBack: "/icons/goal.svg",
+    iconFront: "/handshake.png",
+    iconBack: "/handshake-back.png",
   },
 ];
 
@@ -38,7 +38,6 @@ export default function VisionMissionGoals() {
             <Card
               key={i}
               {...it}
-              // full width on mobile, 2-up on md, 3-up on lg
               className="w-full md:w-[calc(50%-12px)] lg:w-1/3 md:last:mx-auto lg:mx-0"
             />
           ))}
@@ -58,12 +57,12 @@ function Card({
   return (
     <div
       className={`group relative ${className} rounded-2xl border border-[#e8ecf6]/80 bg-white
-        px-5 py-6 sm:px-6 sm:py-7 shadow-[0_10px_30px_rgba(17,37,80,0.06)]
+        px-5 py-6 shadow-[0_10px_30px_rgba(17,37,80,0.06)]
         transition-all duration-300 flex gap-4 sm:gap-5`}
     >
       {/* Icon with 3D flip */}
       <div
-        className="relative h-16 w-16 shrink-0 rounded-xl bg-amber-50
+        className="relative h-20 w-20 shrink-0 rounded-xl bg-amber-50
           flex items-center justify-center
           [transform-style:preserve-3d]
           transition-transform duration-500
@@ -71,11 +70,11 @@ function Card({
       >
         {/* front */}
         <div className="absolute inset-0 grid place-items-center [backface-visibility:hidden]">
-          <Image src={iconFront} alt="" width={36} height={36} />
+          <Image src={iconFront} alt="" width={50} height={50} />
         </div>
         {/* back */}
         <div className="absolute inset-0 grid place-items-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-          <Image src={iconBack || iconFront} alt="" width={36} height={36} />
+          <Image src={iconBack || iconFront} alt="" width={50} height={50} />
         </div>
       </div>
 

@@ -14,7 +14,6 @@ export default function Footer() {
   const lastY = useRef(0);
 
   useEffect(() => {
-    // track scroll direction to toggle the ball position
     lastY.current = window.scrollY;
     const onScroll = () => {
       const y = window.scrollY;

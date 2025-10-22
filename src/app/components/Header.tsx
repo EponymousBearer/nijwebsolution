@@ -51,7 +51,6 @@ const IconArrowDown = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-// ---- Data model ----
 const NAV = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
@@ -78,14 +77,14 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [mounted, setMounted] = useState(false); // <-- Add this line
+  const [mounted, setMounted] = useState(false);
   const drawerId = useId();
   const servicesId = useId();
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const drawerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    setMounted(true); // <-- Set mounted to true after client mount
+    setMounted(true); 
   }, []);
 
   // Sticky shadow on scroll
@@ -140,7 +139,6 @@ export default function Header() {
   return (
     <header
       className={classNames(
-        // positioned + high z + isolate
         "sticky top-0 z-[10000] isolate w-full backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90",
         scrolled ? "shadow-sm ring-1 ring-black/5" : ""
       )}
@@ -447,8 +445,3 @@ export default function Header() {
     </header>
   );
 }
-
-// ---- Usage ----
-// 1) Place your logo image at public/logo-nijweb.png (or update the src above).
-// 2) Import <Header /> in app/layout.tsx and render above {children}.
-// 3) Tailwind recommended classes already included; tweak colors for your brand.

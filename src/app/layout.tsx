@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Script from "next/script"; // ✅ Import Next.js Script
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,7 +34,7 @@ export default function RootLayout({
         <Script
           src="https://kit.fontawesome.com/4b89063551.js"
           crossOrigin="anonymous"
-          strategy="afterInteractive" // loads after hydration
+          strategy="afterInteractive"
         />
 
         <Header />

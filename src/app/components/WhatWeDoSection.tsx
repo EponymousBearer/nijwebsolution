@@ -1,4 +1,3 @@
-// components/WhatWeDoSection.tsx
 import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 

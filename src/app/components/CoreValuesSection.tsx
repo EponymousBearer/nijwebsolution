@@ -26,7 +26,6 @@ const items: Item[] = [
 
 export default function CoreValuesSection() {
   return (
-    // Hide horizontal overflow so orbiting crosses dont create a bottom scrollbar
     <section className="relative w-full bg-white overflow-hidden isolate">
       {/* === BACKGROUND GLOWS === */}
       {/* LEFT PURPLE GLOW */}
@@ -62,10 +61,8 @@ export default function CoreValuesSection() {
                   md:last:mx-auto lg:mx-0
                   ${
                     i === 1
-                      ? // middle: base lift -32px, on hover lift to -40px; add tiny side spacing
-                        "lg:-translate-y-8 xl:-translate-y-8 lg:hover:-translate-y-10 xl:hover:-translate-y-10 lg:mx-2 xl:mx-3"
-                      : // others: sit slightly lower by default, small hover lift
-                        "xl:translate-y-4 hover:-translate-y-1"
+                      ? "lg:-translate-y-8 xl:-translate-y-8 lg:hover:-translate-y-10 xl:hover:-translate-y-10 lg:mx-2 xl:mx-3"
+                      : "xl:translate-y-4 hover:-translate-y-1"
                   }`}
             />
           ))}
@@ -120,7 +117,6 @@ function Card({
   );
 }
 
-// ✅ Update the component props to use the helper type
 function Cross({ style }: { style?: CSSVarProps }) {
   return (
     <svg
