@@ -2,7 +2,6 @@ import BreadcrumbHeroServices from "@/app/components/BreadcrumbHeroServices";
 import ServiceDetail from "@/app/components/ServiceDetail";
 import { SERVICE_CONTENT } from "../_content";
 import { THIRD_SECTION_BY_SLUG } from "@/app/components/third";
-import { FOURTH_SECTION_BY_SLUG } from "@/app/components/fourth";
 
 type Params = { service: string };
 
@@ -24,10 +23,6 @@ export default async function Service({ params }: { params: Promise<Params> }) {
   const Third =
     THIRD_SECTION_BY_SLUG[service] ?? THIRD_SECTION_BY_SLUG["web-development"];
 
-  const Fourth =
-    FOURTH_SECTION_BY_SLUG[service] ??
-    FOURTH_SECTION_BY_SLUG["web-development"];
-
   return (
     <main className="min-h-screen bg-white">
       <BreadcrumbHeroServices
@@ -44,8 +39,6 @@ export default async function Service({ params }: { params: Promise<Params> }) {
       {/* 3rd section – expertise / offerings list */}
       <Third />
 
-      {/* 4th section – Why Choose */}
-      <Fourth />
     </main>
   );
 }
