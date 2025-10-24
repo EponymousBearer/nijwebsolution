@@ -58,10 +58,11 @@ const NAV = [
     label: "Services",
     href: "/services",
     children: [
-      { label: "Web Development", href: "/services/web" },
-      { label: "E‑commerce", href: "/services/ecommerce" },
-      { label: "Mobile Apps", href: "/services/mobile" },
-      { label: "UI/UX Design", href: "/services/design" },
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "Mobile App Development", href: "/services/mobile-app-development" },
+      { label: "UI/UX Design", href: "/services/ui-ux-design" },
+      { label: "ERP Solutions", href: "/services/erp-solution" },
+      { label: "Digital Marketing", href: "/services/marketing-services" },
     ],
   },
   { label: "Our Work", href: "/work" },
@@ -248,7 +249,7 @@ export default function Header() {
 
               {/* Static cloud (no animation) */}
               <Image
-                src="/cloud-patteren.png"
+                src="/cloud-pattern.png"
                 alt="cloud pattern"
                 width={100}
                 height={40}

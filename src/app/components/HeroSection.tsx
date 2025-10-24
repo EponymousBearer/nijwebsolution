@@ -91,7 +91,7 @@ const HeroSlider: FC = () => {
             />
 
             {/* PNG overlay (wavy/texture) — put your file in /public */}
-            <div className="absolute bottom-0 left-0 w-full h-1/2 -z-10 pointer-events-none">
+            <div className="absolute bottom-0 left-0 w-full h-1/2 z-10 pointer-events-none">
               <Image
                 src="/h9_banner_img.png"
                 alt="overlay"
@@ -102,7 +102,7 @@ const HeroSlider: FC = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 h-full mx-auto  px-6 xl:px-24 max-w-screen-2xl 2xl:px-36 flex items-center lg:items-end pb-0 lg:pb-16">
+            <div className="relative z-10 h-full mx-auto px-6 xl:px-24 max-w-screen-2xl 2xl:px-36 flex items-center lg:items-end pb-0 lg:pb-16">
               <div className=" text-center mx-auto lg:mx-0 lg:text-left lg:max-w-md xl:max-w-3xl mt-16 sm:mt-0">
                 <h1 className="text-xl md:text-[1.75rem] lg:text-3xl xl:text-[2.7rem] font-bold text-white leading-[1.1] font-sans">
                   {s.title}
