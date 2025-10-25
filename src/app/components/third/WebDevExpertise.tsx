@@ -55,23 +55,6 @@ export default function WebDevExpertise() {
           Our Expertise in Web Development
         </h2>
 
-        {/* <div className="mt-8 flex flex-wrap">
-          {ITEMS.map((it, i) => (
-            <div
-              key={i}
-              className="min-h-96 w-full md:w-1/2 xl:w-1/4 border border-slate-200/60 bg-[#fbfcff]
-                         p-12 hover:-translate-y-1 transition-transform duration-300"
-            >
-              <div className="h-20 w-20 relative">
-                <Image src={it.icon} alt="" fill className="object-contain" />
-              </div>
-              <h3 className="text-xl mt-4 font-bold text-heading">
-                {it.title}
-              </h3>
-              <p className="text-md mt-4 text-body leading-6">{it.desc}</p>
-            </div>
-          ))}
-        </div> */}
         <div className="mt-8 flex flex-wrap">
           {ITEMS.map((it, i) => {
             // Define color based on index
@@ -80,13 +63,6 @@ export default function WebDevExpertise() {
 
             // Define color classes
             const bgColor = isBrownCard ? "bg-[#fdf8f3]" : "bg-[#f3f8fd]"; // light brown / light blue
-            const borderColor = isBrownCard
-              ? "border-[#d2b48c]"
-              : "border-[#93c5fd]"; // tan / sky-blue
-            const titleColor = isBrownCard
-              ? "text-[#8b4513]"
-              : "text-[#1e40af]"; // brown / blue
-
             return (
               <div
                 key={i}

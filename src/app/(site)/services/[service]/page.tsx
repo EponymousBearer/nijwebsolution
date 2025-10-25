@@ -67,9 +67,14 @@ export default async function Service({ params }: { params: Promise<Params> }) {
           return null;
         }
 
+        // if (service === "ui-ux-design") {
+        //   // ✅ show <WhatWeOffer /> only for UI/UX Design
+        //   return <WhatWeOffer  />;
+        // }
+
         if (service === "ui-ux-design") {
-          // ✅ show <WhatWeOffer /> only for UI/UX Design
-          return <WhatWeOffer />;
+          // add a key here to satisfy react/jsx-key
+          return <WhatWeOffer key={`what-we-offer-${i}`} />;
         }
 
         // ✅ all other services render normally
