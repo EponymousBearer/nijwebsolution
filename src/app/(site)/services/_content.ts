@@ -1,5 +1,7 @@
 // app/(site)/services/_content.ts
 import { ServiceDetailProps } from "@/app/components/ServiceDetail";
+import { FourthServiceDetailProps } from "@/app/components/WhyChoose";
+import { FifthServiceDetailProps } from "@/app/components/FromIdeaToExecution";
 
 export const SERVICE_CONTENT: Record<string, ServiceDetailProps[]> = {
   "web-development": [
@@ -110,6 +112,121 @@ export const SERVICE_CONTENT: Record<string, ServiceDetailProps[]> = {
           body: "Ready to accelerate your business growth? Contact us today to discuss how our digital marketing strategies can drive more traffic, increase conversions, and boost your online presence. Let’s work together to bring your business to the forefront of the digital world.",
         },
       ],
+    },
+  ],
+};
+
+// content/fifth-service-content.ts
+export const FIFTH_SERVICE_CONTENT: Record<string, FifthServiceDetailProps[]> =
+  {
+    "web-development": [
+      {
+        heading: "From Idea to Execution: Our Development Process",
+        bullets:
+          "STRATEGY: We make strategies to do creating a successful app and deliver it as soon as possible.\n" +
+          "ANALYSIS & PLANNING: After taking a project we do analysis of project and find new opportunities.\n" +
+          "UI/UX DESIGN: Our team gives innovative, creative design services for attract users to the company.\n" +
+          "APP DEVELOPMENT: Developing the back-end, API and mobile app; all features will be done in this process.\n" +
+          "TESTING: We perform testing and QA to ensure project quality that meets all project requirements.\n" +
+          "LAUNCH: Lunching it on App Store and Play Store.\n" + // kept the original wording from screenshot
+          "DEPLOYMENT & SUPPORT: Providing support for future revision as well.",
+      },
+    ],
+
+    "mobile-app-development": [
+      {
+        heading: "From Idea to Execution: Our Development Process",
+        bullets:
+          "STRATEGY: We make strategies to do creating a successful app and deliver it as soon as possible.\n" +
+          "ANALYSIS & PLANNING: After taking a project we do analysis of project and find new opportunities.\n" +
+          "UI/UX DESIGN: Our team gives innovative, creative design services for attract users to the company.\n" +
+          "APP DEVELOPMENT: Developing the back-end, API and mobile app; all features will be done in this process.\n" +
+          "TESTING: We perform testing and QA to ensure project quality that meets all project requirements.\n" +
+          "LAUNCH: Lunching it on App Store and Play Store.\n" +
+          "DEPLOYMENT & SUPPORT: Providing support for future revision as well.",
+      },
+    ],
+
+    "marketing-services": [
+      {
+        heading: "Our Marketing Strategy to Grow Business.",
+        bullets:
+          "Discovery & Research: We begin by understanding your business, target audience, competitors, and industry landscape.\n" +
+          "Strategy Development: Based on our research, we craft a customized marketing strategy that aligns with your objectives.\n" +
+          "Content Creation: Content is at the heart of every successful marketing campaign. Our creative team develops amazing content for your business.\n" +
+          "Campaign Execution: We launch your marketing campaign across the multiple platforms as per your requirement.\n" +
+          "Monitoring & Optimization: Once the campaign is live, we continuously monitor its performance.\n" +
+          "Reporting & Feedback: Transparency is key. We provide detailed reports that highlight important KPIs.\n" +
+          "Scaling for Growth: After identifying what strategies work best, we scale successful campaigns for larger reach.",
+      },
+    ],
+  };
+
+export const FOURTH_SERVICE_CONTENT: Record<
+  string,
+  FourthServiceDetailProps[]
+> = {
+  "web-development": [
+    {
+      heading: "Why Choose Nij Web Solutions?",
+      image: "/service/img-about.png", // e.g. the 1st screenshot
+      bullets:
+        "Customized Solutions: We design web applications that align perfectly with your business processes and objectives.\n" +
+        "Full-Stack Expertise: Our skilled developers excel in technologies like Laravel, Node.js, React.js, and more.\n" +
+        "Performance-Driven Development: We focus on creating fast, secure, and scalable web applications that deliver results.\n" +
+        "User-Centric Design: Our websites are crafted with intuitive interfaces that keep your audience engaged.\n" +
+        "End-to-End Service: From ideation to deployment, we manage every stage of your project.",
+    },
+  ],
+
+  "mobile-app-development": [
+    {
+      heading: "Why Choose Us for Mobile App Development?",
+      image: "/service/img-about2.png", // 2nd screenshot
+      bullets:
+        "Tailored Solutions: We deliver customized apps designed to match your business needs, ensuring high performance and scalability.\n" +
+        "Multi-Device Compatibility: Our apps are optimized for smartphones, tablets, smart wearables, and other devices to reach a wider audience.\n" +
+        "Expert Developers: With years of experience, our developers specialize in Android, iOS, Flutter, and React Native technologies.\n" +
+        "Cost-Effective Services: Get premium app development services at competitive prices without compromising on quality.",
+    },
+  ],
+
+  "ui-ux-design": [
+    {
+      heading: "Why Choose Nij Web Solutions for UI/UX Design?",
+      image: "/service/UX_Design.png", // 3rd screenshot
+      bullets:
+        "Proven Track Record: Since 2017, we’ve delivered 100% success across hundreds of projects, earning the trust of businesses worldwide.\n" +
+        "User-Centric Solutions: Our designs focus on enhancing user experience and achieving your business goals.\n" +
+        "End-to-End Services: From prototypes to final designs, we provide a comprehensive range of UI/UX solutions under one roof.\n" +
+        "Customer Satisfaction: We prioritize your needs, timelines, and budget, ensuring a partnership built on trust and quality.\n" +
+        "Elevate Your Brand: We don’t just design interfaces — we create experiences that inspire and resonate with your audience.",
+    },
+  ],
+
+  "erp-solution": [
+    {
+      heading: "Why Choose Nij Web Solutions for ERP Solutions?",
+      image: "/service/ERP_Solution.png", // 4th screenshot
+      bullets:
+        "Proven Expertise: Since 2017, we’ve delivered 100% success across hundreds of ERP projects, building trust and long-term relationships.\n" +
+        "Tailored Solutions: We design ERP systems to align with your unique business needs, ensuring maximum efficiency and ROI.\n" +
+        "Cost-Effective Services: Get exceptional ERP solutions at competitive prices, tailored for businesses of all sizes.\n" +
+        "Seamless Integration: Our ERP systems integrate smoothly with your existing processes to minimize disruptions.\n" +
+        "Customer Satisfaction: We prioritize your goals, timelines, and budget so every project exceeds expectations.",
+    },
+  ],
+
+  "marketing-services": [
+    {
+      heading: "Why Choose Nij Web Solutions for Your Digital Marketing Needs?",
+      image: "/service/Digital_Marketing.png", // 5th screenshot
+      bullets:
+        "Proven Success: We have worked with hundreds of businesses and helped them achieve measurable milestones. With a 100% project delivery success rate, our team is committed to delivering results that meet your business needs.\n" +
+        "Holistic Approach: From SEO and PPC to content creation and social media optimization, we provide end-to-end digital marketing solutions, ensuring every aspect of your online presence is covered.\n" +
+        "Cost-Effective: We deliver high-impact services at competitive prices, helping businesses of all sizes succeed in the competitive digital marketplace.\n" +
+        "Customer-Centric: Your goals are at the heart of what we do. We customize every strategy to meet your unique needs and ensure the best outcomes.\n" +
+        "Experienced Team: With years of expertise and a deep understanding of digital marketing, our team stays ahead of industry trends to help your business achieve sustained growth.",
     },
   ],
 };

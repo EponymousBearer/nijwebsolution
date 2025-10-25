@@ -72,7 +72,7 @@ export default function CoreValuesSection() {
   );
 }
 
-type CSSVarProps = React.CSSProperties & {
+export type CSSVarProps = React.CSSProperties & {
   [key: `--${string}`]: string | number;
 };
 
@@ -117,7 +117,7 @@ function Card({
   );
 }
 
-function Cross({ style }: { style?: CSSVarProps }) {
+export function Cross({ style }: { style?: CSSVarProps }) {
   return (
     <svg
       width="10"
@@ -135,7 +135,7 @@ function Cross({ style }: { style?: CSSVarProps }) {
   );
 }
 
-function Circle({ style }: { style?: CSSVarProps }) {
+export function Circle({ style }: { style?: CSSVarProps }) {
   return (
     <svg
       width="8"
