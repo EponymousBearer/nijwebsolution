@@ -3,17 +3,15 @@
 import Image from "next/image";
 import React from "react";
 
-/* ---------- types ---------- */
 export type FourthSectionProps = {
   title: string;
   bullets: string[];
-  imageMain: string; // big image (right/top)
-  imageOverlay?: string; // smaller overlay image (bottom/left)
+  imageMain: string;
+  imageOverlay?: string;
   altMain?: string;
   altOverlay?: string;
 };
 
-/* ---------- presentational section ---------- */
 function FourthSection({
   title,
   bullets,
@@ -40,7 +38,7 @@ function FourthSection({
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    className="h-4 w-4 text-green-600"
+                    className="h-4 w-4 text-primary"
                   >
                     <path
                       strokeWidth="2"
@@ -56,7 +54,7 @@ function FourthSection({
           </ul>
         </div>
 
-        {/* right: imagery (overlapped cards, like your screenshot) */}
+        {/* right: imagery */}
         <div className="relative mx-auto w-full max-w-[520px]">
           {/* big card */}
           <div className="relative overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
@@ -91,15 +89,12 @@ function FourthSection({
   );
 }
 
-/* ---------- tiny factory so the mapping returns components ---------- */
 const makeFourth = (data: FourthSectionProps): React.FC => {
   return function FourthWrapped() {
     return <FourthSection {...data} />;
   };
 };
 
-/* ---------- seed data for 5 slugs (edit freely) ---------- */
-/* replace slugs & content with yours; images can be static files or URLs */
 const FOURTH_DATA_BY_SLUG: Record<string, FourthSectionProps> = {
   "web-development": {
     title: "Why Choose Nij Web Solutions?",
@@ -165,7 +160,6 @@ const FOURTH_DATA_BY_SLUG: Record<string, FourthSectionProps> = {
   },
 };
 
-/* ---------- export a component-per-slug map ---------- */
 export const FOURTH_SECTION_BY_SLUG: Record<string, React.FC> =
   Object.fromEntries(
     Object.entries(FOURTH_DATA_BY_SLUG).map(([slug, data]) => [
@@ -174,5 +168,4 @@ export const FOURTH_SECTION_BY_SLUG: Record<string, React.FC> =
     ])
   );
 
-/* fallback export (optional) */
 export default FourthSection;

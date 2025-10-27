@@ -91,7 +91,7 @@ export default function ShowcaseTestimonial() {
             <div className="grid lg:flex">
               {/* Left: Blue content */}
               <div className="relative min-h-80 h-full md:min-h-56 flex justify-between items-center bg-secondary text-white w-full">
-                {/* optional decorative wave */}
+                {/* decorative wave */}
                 <div className="absolute inset-x-0 bottom-0 pointer-events-none opacity-60">
                   <Image
                     src="/consulting_shape.png"

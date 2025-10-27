@@ -21,7 +21,6 @@ export default function AboutCompanyBlock({
   return (
     <section className="w-full bg-white">
       <div className="mx-auto px-4 sm:px-8 xl:px-24 max-w-screen-2xl 2xl:px-36 py-6 sm:py-16">
-        {/* FLEX ONLY (no grid) */}
         <div className=" flex flex-col lg:flex-row items-start lg:items-stretch justify-between lg:gap-14 xl:gap-20">
           {/* LEFT: image + stats badge */}
           <div className="w-full lg:w-1/2 max-w-lg xl:max-w-none mx-auto xl:min-h-[34rem] flex flex-col justify-between gap-y-8">

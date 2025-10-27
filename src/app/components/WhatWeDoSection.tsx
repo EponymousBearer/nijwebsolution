@@ -26,7 +26,7 @@ export default function WhatWeDoSection({
           {title}
         </h2>
 
-        {/* Content (FLEX ONLY) */}
+        {/* Content */}
         <div className="mt-6 sm:mt-8 flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* LEFT: bullet list */}
           <div className="flex-1">

@@ -157,7 +157,7 @@ function StatItem({ value, labelTop, labelBottom, iconFront, iconBack }: Stat) {
         <span className="absolute inset-0 grid place-items-center [backface-visibility:hidden]">
           {iconFront}
         </span>
-        {/* Back (can be same as front; tweak class for a subtle change) */}
+        {/* Back */}
         <span className="absolute inset-0 grid place-items-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
           {iconBack ?? iconFront}
         </span>

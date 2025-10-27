@@ -12,7 +12,6 @@ export default function ServiceStackImageSection({
   return (
     <section className="relative w-full bg-white">
       <div className="sm:max-w-7xl mx-auto sm:px-6 ">
-        {/* Keep the image fully visible without cropping */}
         <div className="relative w-full min-h-[100px] md:min-h-[190px] lg:min-h-[260px] xl:min-h-[300px]">
           <Image
             src={src}

@@ -99,7 +99,7 @@ function Card({
       </h3>
       <p className="mt-3 text-center leading-7 text-lg text-body">{desc}</p>
 
-      {/* ✅ Orbit + circle with proper types */}
+      {/* Orbit + circle */}
       <div className="hidden md:block pointer-events-none absolute top-20 -right-10 -translate-y-1/2 z-50">
         <div
           className="cross-orbit"

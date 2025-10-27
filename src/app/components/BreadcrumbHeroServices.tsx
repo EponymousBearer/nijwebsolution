@@ -59,7 +59,7 @@ export default function BreadcrumbHeroServices({
         </nav>
       </div>
 
-      {/* Small zig-zag under title (optional) */}
+      {/* Small zig-zag  */}
       <div className="absolute top-18 left-20 h-6 w-22 z-0 slide-x-slow">
         <Image
           src={"/breadcrumb_shape02.png"}

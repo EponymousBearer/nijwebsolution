@@ -90,7 +90,7 @@ const HeroSlider: FC = () => {
               aria-hidden="true"
             />
 
-            {/* PNG overlay (wavy/texture) — put your file in /public */}
+            {/* PNG overlay */}
             <div className="absolute bottom-0 left-0 w-full h-1/2 z-10 pointer-events-none">
               <Image
                 src="/h9_banner_img.png"

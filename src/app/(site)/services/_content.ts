@@ -116,7 +116,6 @@ export const SERVICE_CONTENT: Record<string, ServiceDetailProps[]> = {
   ],
 };
 
-// content/fifth-service-content.ts
 export const FIFTH_SERVICE_CONTENT: Record<string, FifthServiceDetailProps[]> =
   {
     "web-development": [

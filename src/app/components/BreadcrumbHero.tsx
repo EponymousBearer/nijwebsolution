@@ -51,7 +51,7 @@ export default function BreadcrumbHero({
         </nav>
       </div>
 
-      {/* Small zig-zag under title (optional) */}
+      {/* Small zig-zag */}
       <div className="mt-1">
         <div className="absolute top-18 left-20 h-6 w-22 slide-x-slow">
           <Image

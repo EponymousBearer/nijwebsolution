@@ -6,26 +6,17 @@ import { BiPhoneCall } from "react-icons/bi";
 import { FiArrowRight } from "react-icons/fi";
 
 export type ServiceTextBlock = {
-  /** Small green label at the start of a paragraph (optional) */
   lead?: string;
-  /** Bold heading before the paragraph (optional) */
   title?: string;
-  /** The paragraph content (required) */
   body: string;
 };
 
 export type ServiceDetailProps = {
-  /** Big heading on the right (e.g., "Web Development") */
   heading: string;
-  /** BG for breadcrumb */
   banner?: string;
-  /** Illustration on the left */
   image: string;
-  /** One or more blocks of text with green bullets */
   blocks: ServiceTextBlock[];
-  /** When true the image goes on the RIGHT (alternating section) */
   reverse?: boolean;
-  /** Optional CTA line below the text */
   cta?: { text: string; phone?: string };
 };
 
@@ -39,7 +30,7 @@ export default function ServiceDetail({
   return (
     <section className="relative w-full bg-white">
       <div className="mx-auto px-4 sm:px-8 xl:px-24 max-w-screen-2xl 2xl:px-36 py-10 lg:py-16">
-        {/* Wrapper: image + text (flex only) */}
+        {/* Wrapper */}
         <div
           className={`flex flex-col items-center gap-8 ${
             reverse ? "lg:flex-row-reverse" : "lg:flex-row"
@@ -89,7 +80,7 @@ export default function ServiceDetail({
                       {b.body.split("\n").map((line, i) => (
                         <p
                           key={i}
-                          className={`leading-6 ${i > 0 ? "mt-2" : ""}`} // add top margin after first paragraph
+                          className={`leading-6 ${i > 0 ? "mt-2" : ""}`}
                         >
                           {line}
                         </p>

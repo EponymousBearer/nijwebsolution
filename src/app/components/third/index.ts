@@ -13,7 +13,6 @@ export const THIRD_SECTION_BY_SLUG: Record<string, React.ComponentType> = {
   "marketing-services": DigitalMarketingServices,
 };
 
-// If you only have the title, normalize it → slug.
 export const pickThirdByTitle = (title: string) => {
   const slug = title
     .toLowerCase()

@@ -32,7 +32,7 @@ export default function RequestCallBackSection() {
               />
               <button
                 type="submit"
-                className="bg-[#41B64A] text-white font-semibold px-6 md:px-8 py-3 rounded-full hover:bg-[#36a13e] transition-all"
+                className="bg-primary text-white font-semibold px-6 md:px-8 py-3 rounded-full hover:bg-[#36a13e] transition-all"
               >
                 SUBMIT
               </button>

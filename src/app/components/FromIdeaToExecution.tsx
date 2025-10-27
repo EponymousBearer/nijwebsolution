@@ -20,7 +20,7 @@ export default function FromIdeaToExecution({
     .map((line) => {
       const [rawTitle, ...rest] = line.split(":");
       const title = (rawTitle || "").trim();
-      const desc = rest.join(":").trim(); // in case ':' appears in text
+      const desc = rest.join(":").trim();
       return { title, desc };
     });
 
@@ -40,13 +40,13 @@ export default function FromIdeaToExecution({
         {/* Grid of cards */}
         <div className="min-h-[40rem] mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-y-20 lg:gap-x-8">
           {items.map((it, idx) => {
-            const lift = [1, 3, 5].includes(idx); // stagger: 2nd, 4th, 6th
-            const isBottom = idx >= 4; // items 4,5,6
+            const lift = [1, 3, 5].includes(idx); 
+            const isBottom = idx >= 4; 
             const bottomStarts = [
               "lg:col-start-3",
               "lg:col-start-6",
               "lg:col-start-9",
-            ]; // center
+            ];
 
             return (
               <div
@@ -55,9 +55,9 @@ export default function FromIdeaToExecution({
                   "relative flex flex-col items-center justify-center text-center",
                   "rounded-tl-2xl rounded-br-2xl border-b-3 border-primary bg-white shadow-sm ring-1 ring-gray-100 px-6 py-8",
                   "transition-transform duration-200 hover:-translate-y-0.5",
-                  "lg:col-span-3", // each card = 3/12 cols
+                  "lg:col-span-3", 
                   lift ? "lg:-translate-y-8 hover:-translate-y-10" : "",
-                  isBottom ? bottomStarts[idx - 4] : "", // 5th→col 3, 6th→6, 7th→9
+                  isBottom ? bottomStarts[idx - 4] : "",
                 ].join(" ")}
               >
                 {/* Image */}

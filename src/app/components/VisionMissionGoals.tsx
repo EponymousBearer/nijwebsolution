@@ -32,7 +32,6 @@ export default function VisionMissionGoals() {
   return (
     <section className="w-full bg-white">
       <div className="mx-auto px-4 sm:px-8 xl:px-24 2xl:px-36 max-w-screen-2xl py-8 sm:py-12">
-        {/* FLEX + WRAP for responsive rows */}
         <div className="flex flex-wrap lg:flex-nowrap gap-6 lg:gap-8">
           {items.map((it, i) => (
             <Card

@@ -174,8 +174,6 @@ export default function ContactHelpSection() {
   );
 }
 
-/* ------------ small building block ------------ */
-
 function ContactRow({
   icon,
   title,

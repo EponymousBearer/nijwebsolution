@@ -30,7 +30,6 @@ export default function RootLayout({
       <body
         className={`min-h-screen bg-white text-slate-900 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ✅ Use Next.js Script for Font Awesome */}
         <Script
           src="https://kit.fontawesome.com/4b89063551.js"
           crossOrigin="anonymous"

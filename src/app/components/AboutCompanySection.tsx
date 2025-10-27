@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function AboutCompanySection() {
   return (
     <section className="relative w-full bg-white">
-      {/* Optional faint background pattern for the whole section */}
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none"
@@ -12,7 +11,7 @@ export default function AboutCompanySection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-10 lg:px-10 py-14 md:py-20">
         <div className="grid items-center gap-12 xl:gap-28 md:gap-16 lg:grid-cols-2">
-          {/* LEFT: Copy */}
+          {/* LEFT */}
           <div className="order-2 lg:order-1">
             <p className="uppercase tracking-wider text-sm font-semibold text-primary">
               About Company
@@ -65,7 +64,7 @@ export default function AboutCompanySection() {
             </div>
           </div>
 
-          {/* RIGHT: Image + rotating decorative PNG */}
+          {/* RIGHT */}
           <div className="order-1 lg:order-2 relative mx-auto w-full max-w-md sm:max-w-lg">
             {/* Main image */}
             <div className="relative z-10 aspect-[4/3] lg:aspect-square xl:aspect-[3/3] w-full overflow-hidden rounded-2xl shadow-md bg-gray-200">
@@ -79,7 +78,7 @@ export default function AboutCompanySection() {
               />
             </div>
 
-            {/* Decorative PNG, slowly rotating back and forth */}
+            {/* Decorative PNG */}
             <div
               aria-hidden
               className="absolute -bottom-16 lg:-bottom-6 right-0 lg:left-1/2 md:-translate-x-1/2 deco-rotate-slow"

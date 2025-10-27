@@ -9,6 +9,9 @@ import { THIRD_SECTION_BY_SLUG } from "@/app/components/third";
 import WhyChoose from "@/app/components/WhyChoose";
 import FromIdeaToExecution from "@/app/components/FromIdeaToExecution";
 import WhatWeOffer from "@/app/components/WhatWeOffer";
+import SolutionsForEveryNeed from "@/app/components/SolutionsForEveryNeed";
+import ProjectHighlight from "@/app/components/ProjectHighlight";
+import FaqAccordion from "@/app/components/FaqAccordion";
 
 type Params = { service: string };
 
@@ -19,12 +22,10 @@ export default async function Service({ params }: { params: Promise<Params> }) {
   const sections =
     SERVICE_CONTENT[service] ?? SERVICE_CONTENT["web-development"];
 
-  // Fallback to "web-development" if unknown
   const fourthsections =
     FOURTH_SERVICE_CONTENT[service] ??
     FOURTH_SERVICE_CONTENT["web-development"];
 
-  // Fallback to "web-development" if unknown
   const fifthsections =
     FIFTH_SERVICE_CONTENT[service] ?? FIFTH_SERVICE_CONTENT["web-development"];
 
@@ -44,7 +45,7 @@ export default async function Service({ params }: { params: Promise<Params> }) {
       <BreadcrumbHeroServices
         title={title}
         crumbs={[{ label: "Home", href: "/" }, { label: title }]}
-        image={heroImage} // ✅ Dynamic image
+        image={heroImage}
       />
 
       {/* Render all service sections; alternate sides */}
@@ -63,23 +64,22 @@ export default async function Service({ params }: { params: Promise<Params> }) {
       {/* 5th section - From Idea to Execution */}
       {fifthsections.map((s, i) => {
         if (service === "erp-solution") {
-          // ✅ skip rendering for ERP
           return null;
         }
 
-        // if (service === "ui-ux-design") {
-        //   // ✅ show <WhatWeOffer /> only for UI/UX Design
-        //   return <WhatWeOffer  />;
-        // }
-
         if (service === "ui-ux-design") {
-          // add a key here to satisfy react/jsx-key
           return <WhatWeOffer key={`what-we-offer-${i}`} />;
         }
 
-        // ✅ all other services render normally
+        // all other services render normally
         return <FromIdeaToExecution key={i} {...s} />;
       })}
+
+      <SolutionsForEveryNeed />
+
+      <ProjectHighlight />
+
+      <FaqAccordion />
     </main>
   );
 }

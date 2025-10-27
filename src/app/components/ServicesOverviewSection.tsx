@@ -66,7 +66,7 @@ function Card({ title, img, points }: Service) {
       
       "
     >
-      {/* inner layout: image left, content right on md+; stacked on mobile */}
+      {/* inner layout */}
       <div className="flex flex-col sm:flex-row md:gap-x-6 lg:gap-x-0">
         {/* image */}
         <div className="lg:w-56 sm:flex-none rounded-s-xl overflow-hidden bg-slate-50">

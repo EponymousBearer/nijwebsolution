@@ -29,7 +29,6 @@ const ALL: Item[] = [
 ];
 
 export default function MobileAppExpertise() {
-  // first is the large card on the left; the rest go on the right
   const [primary, ...rest] = ALL;
 
   return (
@@ -40,19 +39,11 @@ export default function MobileAppExpertise() {
         className="absolute inset-0 bg-cover bg-center opacity-100"
         style={{ backgroundImage: "url('/service/services_bg.jpg')" }}
       />
-      {/* faint pattern (top left) */}
-      {/* <Image
-        src="/service/pattern-dots.svg"
-        alt=""
-        width={140}
-        height={140}
-        className="pointer-events-none absolute left-8 top-10 opacity-60 hidden sm:block"
-      /> */}
 
       <div className="relative z-10 mx-auto px-6 xl:px-24 max-w-screen-2xl 2xl:px-36 py-10 lg:py-14">
-        {/* MAIN LAYOUT: stacked on mobile, side-by-side from lg */}
+        {/* MAIN LAYOUT */}
         <div className="mt-6 flex flex-col lg:flex-row gap-6 lg:gap-16">
-          {/* LEFT: big Android card */}
+          {/* LEFT */}
           <div className="w-full lg:w-[46%] flex flex-col justify-center">
             <h2 className="text-[28px] sm:text-[40px] font-bold text-heading">
               Our Expertise
@@ -60,12 +51,11 @@ export default function MobileAppExpertise() {
             <BigCard {...primary} />
           </div>
 
-          {/* RIGHT: three stacked cards */}
+          {/* RIGHT */}
           <div className="w-full lg:w-[54%] flex flex-col gap-6">
             {rest.map((it, idx) => (
               <div
                 key={idx}
-                // push ONLY the 2nd card a bit to the right
                 className={
                   idx === 1 ? "md:translate-x-4 lg:translate-x-10" : ""
                 }
@@ -79,8 +69,6 @@ export default function MobileAppExpertise() {
     </section>
   );
 }
-
-/* ---------------- components ---------------- */
 
 function BigCard({ icon, title, desc }: Item) {
   return (
@@ -123,7 +111,6 @@ function LineCard({ icon, title, desc }: Item) {
         transition-transform duration-300 ease-out hover:-translate-y-1
       "
     >
-      {/* the little badge that sits outside on larger screens */}
       <div className="absolute -left-6 lg:-left-8 top-1/2 -translate-y-1/2 h-16 w-16 rounded-lg bg-white ring-1 ring-primary shadow-md">
         <div className="h-full w-full grid place-items-center rounded-lg bg-[#F0F7FF]">
           <Image src={icon} alt="" width={28} height={28} />

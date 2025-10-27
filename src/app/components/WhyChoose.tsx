@@ -7,7 +7,7 @@ import { FiArrowRight } from "react-icons/fi";
 export type FourthServiceDetailProps = {
   heading: string;
   image: string;
-  bullets: string; // newline-separated bullets
+  bullets: string;
 };
 
 export default function WhyChoose({
@@ -24,7 +24,7 @@ export default function WhyChoose({
     <section className="relative w-full bg-white">
       <div className="mx-auto px-4 sm:px-8 xl:px-24 max-w-screen-2xl 2xl:px-36 py-10 lg:py-16">
         <div className="flex flex-col items-center gap-10 lg:flex-row">
-          {/* Text (left like the design) */}
+          {/* Text */}
           <div className="w-full lg:w-1/2 max-w-xl order-2 lg:order-1">
             <h2 className="text-2xl sm:text-[40px] font-bold text-heading">
               {heading}
@@ -35,7 +35,7 @@ export default function WhyChoose({
                   key={i}
                   className="flex items-start gap-3 leading-6 text-body"
                 >
-                  <span className="mt-1 inline-flex p-1 rounded-full bg-green-500">
+                  <span className="mt-1 inline-flex p-1 rounded-full bg-primary">
                     <FiArrowRight className="text-white" size={16} />
                   </span>
                   <span className="text-[17px]">{line}</span>
@@ -44,7 +44,7 @@ export default function WhyChoose({
             </ul>
           </div>
 
-          {/* Illustration (right like the design) */}
+          {/* Illustration  */}
           <div className="w-full shrink-0 lg:w-1/2 order-1 lg:order-2">
             <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[520px]">
               <Image

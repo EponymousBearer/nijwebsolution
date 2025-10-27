@@ -57,12 +57,11 @@ export default function WebDevExpertise() {
 
         <div className="mt-8 flex flex-wrap">
           {ITEMS.map((it, i) => {
-            // Define color based on index
-            const isBrownRow = Math.floor(i / 4) % 2 === 0; // first row brown-first, second row blue-first
+            const isBrownRow = Math.floor(i / 4) % 2 === 0;
             const isBrownCard = isBrownRow ? i % 2 === 0 : i % 2 !== 0;
 
             // Define color classes
-            const bgColor = isBrownCard ? "bg-[#fdf8f3]" : "bg-[#f3f8fd]"; // light brown / light blue
+            const bgColor = isBrownCard ? "bg-[#fdf8f3]" : "bg-[#f3f8fd]";
             return (
               <div
                 key={i}
@@ -80,7 +79,9 @@ export default function WebDevExpertise() {
                 <h3 className={`text-[22px] mt-4 font-bold text-heading`}>
                   {it.title}
                 </h3>
-                <p className="text-[17px] mt-4 text-body leading-6">{it.desc}</p>
+                <p className="text-[17px] mt-4 text-body leading-6">
+                  {it.desc}
+                </p>
               </div>
             );
           })}

@@ -46,7 +46,6 @@ export default function ITServicesSection() {
               key={index}
               className="min-h-[28rem] xl:min-h-[36rem] relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
-              {/* Image (keeps overflow hidden just for the image) */}
               <div className="relative w-full h-48 rounded-t-xl overflow-hidden">
                 <Image
                   src={service.img}
@@ -56,7 +55,7 @@ export default function ITServicesSection() {
                 />
               </div>
 
-              {/* Badge (outside image, overlaps onto white content) */}
+              {/* Badge  */}
               <div className="absolute left-6 top-40 w-16 h-16 rounded-full bg-white shadow-md z-20 flex items-center justify-center overflow-hidden">
                 <Image
                   src={service.badge}

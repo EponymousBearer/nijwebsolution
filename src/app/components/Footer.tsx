@@ -27,10 +27,10 @@ export default function Footer() {
 
   return (
     <footer className="relative w-full bg-white">
-      {/* Decorative waves (optional) */}
+      {/* Decorative waves */}
       <div className="pointer-events-none absolute right-0 top-0 z-0">
         <Image
-          src="/footer_shape02.png" /* optional */
+          src="/footer_shape02.png"
           alt=""
           width={520}
           height={220}
@@ -40,7 +40,7 @@ export default function Footer() {
 
       <div className="pointer-events-none absolute left-0 bottom-0 z-0">
         <Image
-          src="/footer_shape01.png" /* optional */
+          src="/footer_shape01.png"
           alt=""
           width={520}
           height={220}
@@ -48,7 +48,7 @@ export default function Footer() {
         />
       </div>
 
-      {/* Floating ball (animated by scroll direction) */}
+      {/* Floating ball */}
       <div
         className={`pointer-events-none absolute right-8 top-8 md:right-10 md:top-22 z-20 footer-ball ${
           up ? "to-corner" : ""
@@ -56,7 +56,7 @@ export default function Footer() {
         aria-hidden
       >
         <Image
-          src="/footer_shape03.png" /* optional */
+          src="/footer_shape03.png"
           alt=""
           width={41}
           height={41}
@@ -187,7 +187,6 @@ export default function Footer() {
   );
 }
 
-/* ---------- small building blocks ---------- */
 function FooterLink({
   href,
   children,

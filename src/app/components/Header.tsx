@@ -8,14 +8,6 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { Grip } from "lucide-react";
-/**
- * Responsive Header for Next.js (App Router)
- * - Desktop: logo + nav + CTA, services dropdown.
- * - Mobile: minimal topbar with logo + grid button => right-side drawer.
- * - Accessibility: semantic nav/menus, keyboard support, focus trapping in drawer, aria-expanded, aria-controls.
- * - UX polish: sticky, auto shadow on scroll, reduced-motion safe animations, dark-mode friendly.
- * - Best practices: data-driven nav, Next/Image, Link, prefers-reduced-motion guards, event cleanup, ESC to close.
- */
 
 const IconClose = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -59,7 +51,10 @@ const NAV = [
     href: "/services",
     children: [
       { label: "Web Development", href: "/services/web-development" },
-      { label: "Mobile App Development", href: "/services/mobile-app-development" },
+      {
+        label: "Mobile App Development",
+        href: "/services/mobile-app-development",
+      },
       { label: "UI/UX Design", href: "/services/ui-ux-design" },
       { label: "ERP Solutions", href: "/services/erp-solution" },
       { label: "Digital Marketing", href: "/services/marketing-services" },
@@ -85,7 +80,7 @@ export default function Header() {
   const drawerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    setMounted(true); 
+    setMounted(true);
   }, []);
 
   // Sticky shadow on scroll
@@ -149,7 +144,6 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 rounded-xl">
-            {/* Replace with your logo asset */}
             <Image
               src="/logo-nijweb.png"
               alt="NIJ Web Solutions LLP"
@@ -241,13 +235,12 @@ export default function Header() {
                   alt="rocket icon"
                   width={30}
                   height={30}
-                  /* ⬇️ remove translate-y-[1px]; let keyframes own transform */
                   className="rocket"
-                  priority /* eager-loads above-the-fold to avoid first-loop decode stutter */
+                  priority
                 />
               </span>
 
-              {/* Static cloud (no animation) */}
+              {/* Static cloud */}
               <Image
                 src="/cloud-pattern.png"
                 alt="cloud pattern"
